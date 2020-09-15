@@ -35,6 +35,6 @@ def predict(sentence):
 
     print(f'REVIEW -> {sentence} | SENTIMENT -> {sentiment}')
 
-
-
-
+if __name__ == "__main__":
+    sentence = str(input("Enter a movie review \n"))
+    predict(sentence)
