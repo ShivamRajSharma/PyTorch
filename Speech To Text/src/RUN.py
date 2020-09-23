@@ -77,8 +77,13 @@ def run():
         collate_fn=DataLoader.MyCollate(pad_idx=0)
     )
 
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    torch.backends.cudnn.benchmark=True
+    if torch.cuda.is_available():
+        compute = 'cuda'
+        torch.backends.cudnn.benchmark=True
+    else:
+        compute = 'cpu'
+    
+    device = torch.device(compute)
     
     model = MODEL.ASRModel(
         input_channel=1, 
