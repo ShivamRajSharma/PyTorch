@@ -71,7 +71,14 @@ def run():
         output_size=len(data.english_preprocessing.word_to_idx),
     )
 
-    device = torch.device('cuda')
+    if torch.cuda.is_available():
+        compute = 'cuda'
+        torch.backends.cudnn.benchmark=True
+    else:
+        compute = 'cpu'
+    
+    device = torch.device(compute)
+    
     model = LSTM.Encoder_Decoder(encoder, decoder, len(data.english_preprocessing.word_to_idx))
     model = model.to(device)
 
