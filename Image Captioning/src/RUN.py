@@ -64,8 +64,15 @@ def run():
         num_workers=8,
         collate_fn=DataLoader.MyCollate(pad_idx=pad_idx)
     )
+    
 
-    device = torch.device('cuda')
+    if torch.cuda.is_available():
+        compute = 'cuda'
+        torch.backends.cudnn.benchmark=True
+    else:
+        compute = 'cpu'
+    
+    device = torch.device(compute)
 
     model = model_dispatcher.EncoderDecoder(
         embedding_dims=CONFIG.embedding_dims,
@@ -74,8 +81,6 @@ def run():
         num_layers=CONFIG.num_layer,
         dropout=CONFIG.dropout
     )
-
-    torch.backends.cudnn.benchmark = True
     
     model = model.to(device)
 
