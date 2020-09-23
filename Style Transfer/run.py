@@ -59,7 +59,13 @@ steps = 4000
 alpha = 0.98
 beta = 0.02
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu') 
+if torch.cuda.is_available():
+    compute = 'cuda'
+    torch.backends.cudnn.benchmark=True
+else:
+    compute = 'cpu'
+
+device = torch.device(compute)
 
 image = image_loader(real_image_path, style_image_path)
 real_img = torch.tensor(image['image'].transpose(2, 0, 1)).unsqueeze(0).to(device)
