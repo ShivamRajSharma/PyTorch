@@ -46,9 +46,13 @@ def run():
         collate_fn=DataLoader.MyCollate()
     )
 
-    torch.backends.cudnn.benchmark = True
-
-    # device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    if torch.cuda.is_available():
+        compute = 'cuda'
+        torch.backends.cudnn.benchmark=True
+    else:
+        compute = 'cpu'
+    
+    device = torch.device(compute)
     device = torch.device('cpu')
     model = ROBERTA_MODEL.QnAModel(CONFIG.Dropout)
     mode = model.to(device)
