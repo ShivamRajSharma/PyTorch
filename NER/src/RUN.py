@@ -68,7 +68,13 @@ def run():
         num_ner_class=num_ner_class
     )
 
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    if torch.cuda.is_available():
+        compute = 'cuda'
+        torch.backends.cudnn.benchmark=True
+    else:
+        compute = 'cpu'
+    
+    device = torch.device(compute)
 
     model = model.to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=3e-4)
