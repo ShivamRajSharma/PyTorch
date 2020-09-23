@@ -38,13 +38,16 @@ def run():
         pin_memory=True,
         collate_fn=DataLoader.MyCollate()
     )
+    
 
+    if torch.cuda.is_available():
+        compute = 'cuda'
+        torch.backends.cudnn.benchmark=True
+    else:
+        compute = 'cpu'
+    
+    device = torch.device(compute)
 
-    # torch.backends.cudnn.benchmark = True
-
-    # device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
-    device = torch.device('cpu')
 
     model = model_dispatcher.BERTMODEL()
 
