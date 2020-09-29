@@ -1,1 +1,1 @@
-![](https://miro.medium.com/max/700/1*4br4WmxNo0jkcsY796jGDQ.jpeg | width=100)
+![](https://miro.medium.com/max/700/1*4br4WmxNo0jkcsY796jGDQ.jpeg)
