@@ -1,1 +1,1 @@
-![](https://venturebeat.com/wp-content/uploads/2019/06/pytorch-e1576624094357.jpg?w=1200&strip=all | width=100)
+![](https://miro.medium.com/max/700/1*4br4WmxNo0jkcsY796jGDQ.jpeg | width=100)
