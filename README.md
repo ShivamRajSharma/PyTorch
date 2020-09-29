@@ -1,1 +1,1 @@
-<img src="https://miro.medium.com/max/700/1*4br4WmxNo0jkcsY796jGDQ.jpeg" width="70%" height="20%">
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png" width="70%">
