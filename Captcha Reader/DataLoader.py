@@ -30,7 +30,7 @@ class Vocabulary:
 
 class DataLoader(torch.utils.data.Dataset):
     def __init__(self, transforms):
-        self.image_names = os.listdir(CONFIG.INPUT_PATH)[:100]
+        self.image_names = os.listdir(CONFIG.INPUT_PATH)
         self.vocab = Vocabulary()
         self.vocab.vocab(self.image_names)
         self.transforms =  transforms
@@ -46,7 +46,7 @@ class DataLoader(torch.utils.data.Dataset):
         image = torch.tensor(image, dtype=torch.float)
         image = image.permute(2, 0, 1)
         target_len = len(target)
-        out_len =  image.shape[2] // 2
+        out_len =  image.shape[2] // 5
 
         return {
             'image' : image,
