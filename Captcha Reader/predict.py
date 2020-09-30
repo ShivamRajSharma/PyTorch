@@ -1,3 +1,6 @@
+import warnings
+warnings.filterwarnings('ignore')
+
 import CONFIG
 import CaptchaModel
 
@@ -17,6 +20,7 @@ def predict(image_path):
         out_channels=CONFIG.out_channels, 
         kernel_size=CONFIG.kernel_size, 
         conv_dropout=CONFIG.conv_dropout,
+        max_pool_size=CONFIG.max_pool_size,
         num_conv_layers=CONFIG.num_conv_layers,
         input_dims=CONFIG.input_dims, 
         hidden_dims=CONFIG.hidden_dims,
@@ -24,6 +28,9 @@ def predict(image_path):
         rnn_dropout=CONFIG.rnn_dropout,
         num_classes=len(idx_to_word) + 1
     )
+
+    model.load_state_dict(torch.load(CONFIG.MODEL_PATH))
+
     mean = (0.5, 0.5, 0.5)
     std = (0.5, 0.5, 0.5)
 
@@ -35,10 +42,13 @@ def predict(image_path):
     image = transforms(image=image)['image']
     image = torch.tensor(image).unsqueeze(0)
     image = image.permute(0, 3, 1, 2)
-    output = model(image)
-    output = nn.functional.log_softmax(output, dim=-1)
+
+    model.eval()
+    with torch.no_grad():
+        output = model(image)
+        
     output = torch.argmax(output, dim=-1).squeeze(0)
-    output = output.detach().cpu().numpy()
+    output = output.numpy()
 
     prediction = []
     for num, label in enumerate(output):
@@ -54,4 +64,4 @@ def predict(image_path):
 
 
 if __name__ == "__main__":
-    predict('input/captcha_images_v2/8y6b3.png')
+    predict('input/captcha_images_v2/4cn7b.png')
