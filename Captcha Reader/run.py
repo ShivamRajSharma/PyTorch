@@ -43,13 +43,11 @@ def run():
         sampler=val_sampler
     )
 
-    # if torch.cuda.is_available():
-    #     accelarator = 'cuda'
-    #     torch.backends.cudnn.benchmark = True
-    # else :
-    #     accelarator = 'cpu'
-
-    accelarator = 'cpu'
+    if torch.cuda.is_available():
+        accelarator = 'cuda'
+        torch.backends.cudnn.benchmark = True
+    else :
+        accelarator = 'cpu'
     
     device = torch.device(accelarator)
 
@@ -60,6 +58,7 @@ def run():
         out_channels=CONFIG.out_channels, 
         kernel_size=CONFIG.kernel_size, 
         conv_dropout=CONFIG.conv_dropout,
+        max_pool_size=CONFIG.max_pool_size,
         num_conv_layers=CONFIG.num_conv_layers,
         input_dims=CONFIG.input_dims, 
         hidden_dims=CONFIG.hidden_dims,
@@ -90,7 +89,7 @@ def run():
             best_loss = val_loss
             best_model = model.state_dict()
             predict.predict('input/captcha_images_v2/8y6b3.png')
-            torch.save(best_model, CONFIG.MODEL_PATH)
+    torch.save(best_model, CONFIG.MODEL_PATH)
 
 if __name__ == "__main__":
     run()
