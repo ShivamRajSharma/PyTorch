@@ -12,6 +12,6 @@ NOTE: All the models of each project were trained either on RTX 2060 or on Kaggl
 
 ## Requirements
 
-To install all the python packages required for the projects, run the command mentioned below on your terminal/command prompt
+To install all the python packages required for the projects, run the command mentioned below on your terminal/command prompt.
 
 ``` pip install -r requirements.txt ```
