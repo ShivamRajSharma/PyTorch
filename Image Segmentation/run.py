@@ -2,9 +2,9 @@ import CONFIG
 import UNet
 import engine
 import DataLoader
+import predict
 
 import numpy as np
-import sys
 import os
 import torch
 import torch.nn as nn
@@ -28,12 +28,13 @@ def run():
 
     image_transforms = alb.Compose([
         alb.Normalize(CONFIG.mean, CONFIG.std, always_apply=True),
-        alb.Resize(572, 572, always_apply=True),
+        alb.Resize(512, 512, always_apply=True),
         alb.pytorch.ToTensor()
     ])
 
     mask_transforms = alb.Compose([
-        alb.Resize(388, 388, always_apply=True),
+        alb.Normalize(0, 1, always_apply=True),
+        alb.Resize(512, 512, always_apply=True),
         alb.pytorch.ToTensor()
     ])
 
@@ -65,12 +66,11 @@ def run():
         pin_memory=True
     )
 
-    # if torch.cuda.is_available():
-    #     accelarator = 'cuda'
-    #     torch.backends.cudnn.benchmark = True
-    # else:
-    #     accelarator = 'cpu'
-    accelarator = 'cpu'
+    if torch.cuda.is_available():
+        accelarator = 'cuda'
+        torch.backends.cudnn.benchmark = True
+    else:
+        accelarator = 'cpu'
     
     device = torch.device(accelarator)
 
@@ -80,22 +80,25 @@ def run():
     optimizer = torch.optim.Adam(model.parameters(), lr=CONFIG.LR)
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
         optimizer,
+        patience=CONFIG.patience,
         threshold=CONFIG.scheduler_thresh,
-        mode='min'
+        mode="min",
+        factor=CONFIG.decay_factor
     )
 
-    best_loss = 1e-4
+    best_loss = 1e4
     
     print('------ [INFO] STARTING TRAINING ------')
     for epoch in range(CONFIG.Epochs):
         train_loss = engine.train_fn(model, train_loader, optimizer, device)
         val_loss = engine.eval_fn(model, val_loader, device)
-        print(f'EPOCH -> {epoch}/{CONFIG.Epochs} | TRAIN LOSS = {train_loss} | VAL LOSS = {val_loss}')
+        print(f'EPOCH -> {epoch+1}/{CONFIG.Epochs} | TRAIN LOSS = {train_loss} | VAL LOSS = {val_loss} | LR = {optimizer.param_groups[0]["lr"]}\n')
         scheduler.step(val_loss)
         if best_loss > val_loss:
             best_loss = val_loss
             best_model = model.state_dict()
-            torch.save(CONFIG.MODEL_PATH)
+            torch.save(best_model, CONFIG.MODEL_PATH)
+            predict.predict('input/CXR_png/CHNCXR_0001_0.png')
 
 if __name__ == "__main__":
     run()
