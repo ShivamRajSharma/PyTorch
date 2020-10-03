@@ -4,20 +4,25 @@ import torch.nn as nn
 class DownSamplerBlock_(nn.Module):
     def __init__(self, input_channels, out_channels):
         super(DownSamplerBlock_, self).__init__()
+        self.residual = nn.Conv2d(input_channels, out_channels, kernel_size=1)
         self.downsample = nn.Sequential(
-            nn.Conv2d(input_channels, out_channels, kernel_size=3),
-            nn.ReLU(),
-            nn.Conv2d(out_channels, out_channels, kernel_size=3),
-            nn.ReLU()
+            nn.Conv2d(input_channels, out_channels, kernel_size=3, padding=1),
+            nn.LeakyReLU(),
+            nn.Conv2d(out_channels, out_channels, kernel_size=3, padding=1),
+            nn.LeakyReLU(),
         )
 
     def forward(self, x):
-        return self.downsample(x)
+        a = x
+        x = self.downsample(x)
+        a = self.residual(a)
+        x = nn.LeakyReLU()(x + a)
+        return x
 
 class DownSampler(nn.Module):
     def __init__(self, input_channels):
         super(DownSampler, self).__init__()
-        self.channels = [64, 128, 256, 512, 1024]
+        self.channels = [32, 64, 128, 256, 512]
         self.channels.insert(0, input_channels)
         self.layers = nn.Sequential(
             *[
@@ -46,25 +51,27 @@ class UpSamplerBlock(nn.Module):
             kernel_size=2, 
             stride=2
         )
+        self.residual = nn.Conv2d(input_channels, out_channels, kernel_size=1)
         self.out = nn.Sequential(
-            nn.Conv2d(input_channels, out_channels, kernel_size=3),
-            nn.ReLU(),
-            nn.Conv2d(out_channels, out_channels, kernel_size=3),
-            nn.ReLU()
+            nn.Conv2d(input_channels, out_channels, kernel_size=3, padding=1),
+            nn.LeakyReLU(),
+            nn.Conv2d(out_channels, out_channels, kernel_size=3, padding=1),
+            nn.LeakyReLU()
         )
     
     def forward(self, x, past):
         x = self.upsample(x)
-        extra = past.shape[-1] - x.shape[-1]
-        past = past[:, :, int(extra/2):int(extra/2)+x.shape[-1], int(extra/2):int(extra/2)+x.shape[-1]]
         x = torch.cat((x, past), dim=1)
+        a = x
         x = self.out(x)
+        a = self.residual(a)
+        x = nn.LeakyReLU()(x+a)
         return x
 
 class UpSampler(nn.Module):
     def __init__(self):
         super(UpSampler, self).__init__()
-        self.channels = [1024, 512, 256, 128, 64]
+        self.channels = [512, 256, 128, 64, 32]
         self.layers = nn.Sequential(
             *[
                 UpSamplerBlock(self.channels[num], self.channels[num+1])
@@ -83,7 +90,7 @@ class UNet(nn.Module):
         super(UNet, self).__init__()
         self.down = DownSampler(input_channels)
         self.up = UpSampler()
-        self.conv1 = nn.Conv2d(64, 1, kernel_size=1)
+        self.conv1 = nn.Conv2d(32, 1, kernel_size=1)
     
     def forward(self, x):
         x, past = self.down(x)
@@ -92,7 +99,8 @@ class UNet(nn.Module):
         return x
 
 if __name__ == "__main__":
-    a = torch.randn(1, 1, 572, 572)
-    model = UNet(1)
+    a = torch.randn(1, 3, 512, 512)
+    model = UNet(3)
+    print(a.shape)
     y = model(a)
     print(y.shape)
