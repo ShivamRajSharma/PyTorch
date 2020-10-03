@@ -4,16 +4,20 @@ import torch
 import torch.nn as nn 
 from tqdm import tqdm
 
-def dice_loss(predicted, target):
+def dice_loss(predicted, target, epsilon):
+    predicted = torch.sigmoid(predicted)
     predicted = predicted.view(-1)
     target = target.view(-1)
-    intersection = (predicted*target).sum()
-    return 1 - ((2*intersection + 1)/ predicted.sum() + target.sum() + 1)
+    num = 2*((predicted*target).sum()) + epsilon
+    den = predicted.sum()**2 + target.sum()**2 + epsilon
+    return num/den
+
 
 def loss_fn(predicted, target):
-    dice_loss_ = dice_loss(predicted, target)
+    epsilon = 1
+    dice_loss_ = dice_loss(predicted, target, epsilon)
     bce_loss = nn.BCEWithLogitsLoss()(predicted, target)
-    return (CONFIG.bce_loss_coeff*bce_loss) + (CONFIG.dice_loss_coeff*dice_loss_)
+    return (CONFIG.bce_loss_coeff*bce_loss) - (CONFIG.dice_loss_coeff*dice_loss_)
 
 def train_fn(model, dataloader, optimizer, device):
     model.train()
@@ -44,8 +48,3 @@ def eval_fn(model, dataloader, device):
             running_loss += loss.item()
     epoch_loss = running_loss/len(dataloader)
     return epoch_loss
-
-
-
-
-
