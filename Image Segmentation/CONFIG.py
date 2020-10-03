@@ -1,13 +1,16 @@
 INPUT_PATH = 'input/'
 MODEL_PATH = 'model/model.bin'
 
-LR = 1e-3
-scheduler_thresh = 0.03
-Epochs = 10
-Batch_size = 1
+LR = 1e-4
+scheduler_thresh = 0.001
+patience = 1
+decay_factor=0.6
+Epochs = 40
+Batch_size = 2
 
-mean = (0.5, 0.5, 0.5)
-std = (0.5, 0.5, 0.5)
+mean = (0, 0, 0)
+std = (1, 1, 1)
 
-bce_loss_coeff = 0.3
-dice_loss_coeff = 0.7
+pred_threshold = 0.5
+bce_loss_coeff = 0
+dice_loss_coeff = 1
