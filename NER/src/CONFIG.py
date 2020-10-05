@@ -10,5 +10,5 @@ NUM_HIDDEN_LAYER = 1
 DROPOUT = 0.3
 BIDIRECTIONAL = True
 
-INPUT_PATH = 'input/ner_dataset.csv'
-Model_Path = 'model/model.bin'
+INPUT_PATH = '../input/ner_dataset.csv'
+Model_Path = '../model/model.bin'
