@@ -1,26 +1,32 @@
+import os
 import torch 
 import spacy
+import pickle
+from tqdm import tqdm
 import torch.nn as nn 
 from torch.nn.utils.rnn import pad_sequence
 
 class Vocabulary:
     def __init__(self):
         self.word_to_idx = {'<PAD>' : 0, '<UNK>' : 1}
-        self.tokenizer = spacy.load('en')
     
     def vocab(self, sentences):
         num = 2
-        for sentence in sentences:
-            for word in self.tokenizer(sentence):
-                word = str(word.text.lower())
-                if word not in self.word_to_idx:
-                    self.word_to_idx[word] = num
-                    num += 1
-    
+        if os.path.exists('input/word_to_idx.pickle'):
+            print('--- [INFO] LOADING PRECOMPUTED TOKENIZER ---')
+            self.word_to_idx = pickle.load(open('input/word_to_idx.pickle', 'rb'))
+        else:
+            for sentence in tqdm(sentences, total=len(sentences)):
+                for word in sentence:
+                    word = word.lower()
+                    if word not in self.word_to_idx:
+                        self.word_to_idx[word] = num
+                        num += 1
+
     def numercalize(self, sentence):
         sentence_idx = []
-        for word in self.tokenizer(sentence):
-            word =  str(word.test.lower())
+        for word in sentence:
+            word =  word.lower()
             if word in self.word_to_idx:
                 sentence_idx.append(self.word_to_idx[word])
             else:
@@ -29,39 +35,41 @@ class Vocabulary:
             
 
 class DataLoader(torch.utils.data.Dataset):
-    def __init__(self, df):
-        self.sentences = df.sentence.values
-        self.pos = df.pos.values
-        self.ner = df.ner.values
-        self.vocab = Vocab()
+    def __init__(self, sentence, pos, tag):
+        self.sentences = sentence
+        self.pos = pos
+        self.tag = tag
+        self.vocab = Vocabulary()
         self.vocab.vocab(self.sentences)
     
     def __len__(self):
-        return len(self.sentence)
+        return len(self.sentences)
     
     def __getitem__(self, idx):
         sentence = self.sentences[idx]
-        pos_tag = self.pos[idx]
-        ner_tag = self.ner[idx]
+        pos = self.pos[idx]
+        tag = self.tag[idx]
         sentence_idx = self.vocab.numercalize(sentence)
 
         return {
             'sentence' : sentence,
             'sentence_idx' : torch.tensor(sentence_idx, dtype=torch.long),
-            'pos_tag' : torch.tensor(pos_tag, dtype=torch.float),
-            'ner_tag' : torch.tensor(ner_tag, dtype=torch.float)
+            'pos' : torch.tensor(pos, dtype=torch.long),
+            'tag' : torch.tensor(tag, dtype=torch.long)
         }
 
 
 class MyCollate:
-    def __init__(self, pad_idx):
+    def __init__(self, pad_idx, tag_pad_idx, pos_pad_idx):
         self.pad_idx = pad_idx
+        self.tag_pad_idx = tag_pad_idx
+        self.pos_pad_idx = pos_pad_idx
 
     def __call__(self, batch):
-        sentence = [item['sentence'].unsqueeze(0) for item in batch]
+        sentence = [item['sentence'] for item in batch]
         sentence_idx = [item['sentence_idx'] for item in batch]
-        pos_tag = [item['pos_tag'] for item in batch]
-        ner_tag = [item[ner_tag] for item in batch]
+        pos = [item['pos'] for item in batch]
+        tag = [item['tag'] for item in batch]
 
         sentence_idx = pad_sequence(
             sentence_idx,
@@ -69,23 +77,21 @@ class MyCollate:
             padding_value=self.pad_idx
         )
 
-        pos_tag = pad_sequence(
-            pos_tag,
+        pos = pad_sequence(
+            pos,
             batch_first=True,
             padding_value=self.pad_idx
         )
 
-        ner_tag = pad_sequence(
-            ner_tag,
+        tag = pad_sequence(
+            tag,
             batch_first=True,
             padding_value=self.pad_idx
         )
-
-        sentence = torch.cat(sentence, dim=0)
 
         return {
             'sentence' : sentence,
-            'sentence_idx' : torch.tensor(sentence_idx, dtype=torch.long),
-            'pos_tag' : torch.tensor(pos_tag, dtype=torch.float),
-            'ner_tag' : torch.tensor(ner_tag, dtype=torch.float)
+            'sentence_idx' : sentence_idx,
+            'pos' : pos,
+            'tag' : tag
         }
