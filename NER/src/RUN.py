@@ -16,17 +16,17 @@ import numpy as np
 from sklearn.preprocessing import LabelEncoder
 
 def run():
-    df = pd.read_csv('input/ner_dataset.csv', encoding='latin-1')
+    df = pd.read_csv('../input/ner_dataset.csv', encoding='latin-1')
     df['Sentence #'] = df['Sentence #'].fillna(method='ffill')
     
-    if  os.path.exists('input/pos_lb.pickle') and  os.path.exists('tag_lb.pickle'):
-        pos_lb = pickle.load(open('input/pos_lb.pickle', 'rb'))
-        tag_lb = pickle.load(open('input/tag_lb.pickle', 'rb'))
+    if  os.path.exists('../input/pos_lb.pickle') and  os.path.exists('tag_lb.pickle'):
+        pos_lb = pickle.load(open('../input/pos_lb.pickle', 'rb'))
+        tag_lb = pickle.load(open('../input/tag_lb.pickle', 'rb'))
     else:
         pos_lb = LabelEncoder().fit(df.POS.values)
         tag_lb = LabelEncoder().fit(df.Tag.values)
-        pickle.dump(pos_lb, open('input/pos_lb.pickle', 'wb'))
-        pickle.dump(tag_lb, open('input/tag_lb.pickle', 'wb'))
+        pickle.dump(pos_lb, open('../input/pos_lb.pickle', 'wb'))
+        pickle.dump(tag_lb, open('../input/tag_lb.pickle', 'wb'))
 
     df['POS'] = pos_lb.transform(df.POS.values)
     df['Tag'] = tag_lb.transform(df.Tag.values)
@@ -52,7 +52,7 @@ def run():
     train_sampler = torch.utils.data.sampler.SubsetRandomSampler(train_index)
     valid_sampler = torch.utils.data.sampler.SubsetRandomSampler(valid_index)
 
-    if not os.path.exists('input/word_to_idx.pickle'):
+    if not os.path.exists('../input/word_to_idx.pickle'):
         pickle.dump(data.vocab.word_to_idx, open('input/word_to_idx.pickle', 'wb'))
 
     pad_idx = data.vocab.word_to_idx['<PAD>']
