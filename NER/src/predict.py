@@ -12,9 +12,9 @@ import pandas as pd
 
 def predict(sentence):
 
-    word_to_idx = pickle.load(open('input/word_to_idx.pickle', 'rb'))
-    pos_lb = pickle.load(open('input/pos_lb.pickle', 'rb'))
-    tag_lb = pickle.load(open('input/tag_lb.pickle', 'rb'))
+    word_to_idx = pickle.load(open('../input/word_to_idx.pickle', 'rb'))
+    pos_lb = pickle.load(open('../input/pos_lb.pickle', 'rb'))
+    tag_lb = pickle.load(open('../input/tag_lb.pickle', 'rb'))
 
     num_pos_class = len(list(pos_lb.classes_))
     num_tag_class = len(list(tag_lb.classes_))
