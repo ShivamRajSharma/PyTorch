@@ -13,7 +13,7 @@ from sklearn.model_selection import train_test_split
 import sys
 
 def run():
-    df = pd.read_csv('input/IMDB Dataset.csv').sample(frac=1).reset_index(drop=True)
+    df = pd.read_csv('../input/IMDB Dataset.csv').sample(frac=1).reset_index(drop=True)
     df.sentiment = df.sentiment.apply(
         lambda x:
         1 if x == 'positive' else 0
@@ -26,7 +26,7 @@ def run():
         batch_size=CONFIG.Batch_Size,
         num_workers=4,
         pin_memory=True,
-        collate_fn=DataLoader.MyCollate()
+        collate_fn=DataLoader.MyCollate(CONFIG.pad_idx)
     )
 
     val_data = DataLoader.DataLoader(df_val)
@@ -36,17 +36,17 @@ def run():
         batch_size=CONFIG.Batch_Size,
         num_workers=4,
         pin_memory=True,
-        collate_fn=DataLoader.MyCollate()
+        collate_fn=DataLoader.MyCollate(CONFIG.pad_idx)
     )
     
 
     if torch.cuda.is_available():
-        compute = 'cuda'
+        accelarator = 'cuda'
         torch.backends.cudnn.benchmark=True
     else:
-        compute = 'cpu'
+        accelarator = 'cpu'
     
-    device = torch.device(compute)
+    device = torch.device(accelarator)
 
 
     model = model_dispatcher.BERTMODEL()
@@ -91,16 +91,14 @@ def run():
         )
 
         print(f'EPOCH : {epoch+1}/{CONFIG.Epochs}')
-        print(f'TRIAN_ACC = {train_acc} | TRAIN LOSS = {train_loss}')
-        print(f'VAL ACC = {val_acc} | VAL LOSS {val_loss}')
+        print(f'TRIAN_ACC = {train_acc}% | TRAIN LOSS = {train_loss}')
+        print(f'VAL ACC = {val_acc}% | VAL LOSS {val_loss}')
 
         if best_loss > val_loss:
             best_loss = val_loss
             best_model = model.state_dict()
     torch.save(best_model, CONFIG.Model_Path)
-
     
-
 
 if __name__ == "__main__":
     run()
