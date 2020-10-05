@@ -16,9 +16,9 @@ def predict(sentence):
         add_special_tokens=True
     )
 
-    ids = input['input_ids'].unsqueeze(0)
-    mask = input['attention_mask'].unsqueeze(0)
-    token_type_ids = input['token_type_ids'].unsqueeze(0)
+    ids = torch.tensor(inputs['input_ids'], dtype=torch.long).unsqueeze(0)
+    mask = torch.tensor(inputs['attention_mask'], dtype=torch.long).unsqueeze(0)
+    token_type_ids = torch.tensor(inputs['token_type_ids'], dtype=torch.long).unsqueeze(0)
 
     ids = ids.to(device)
     mask = mask.to(device)
@@ -26,7 +26,7 @@ def predict(sentence):
 
     output = model(ids, mask, token_type_ids)
 
-    output = (torch.sigmoid(output).item() > 0.5)*1
+    output = (torch.sigmoid(output[0]).item() > 0.5)*1
 
     if output == 1:
         sentiment = 'Positive'
