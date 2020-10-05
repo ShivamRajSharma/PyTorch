@@ -1,10 +1,14 @@
-EPOCHS = 10
+LR = 1e-3
+EPOCHS = 5
 Valid_split = 0.1
 MAX_LEN = 200
-BATCH_SIZE = 32
-EMBED_DIMS = 300
-HIDDEN_DIMS = 300 
-NUM_HIDDEN_LAYER = 1
-DROPOUT = 0.2
+BATCH_SIZE = 64
 
-Model_Path = '../model/model.bin'
+EMBED_DIMS = 150
+HIDDEN_DIMS = 150
+NUM_HIDDEN_LAYER = 1
+DROPOUT = 0.3
+BIDIRECTIONAL = True
+
+INPUT_PATH = 'input/ner_dataset.csv'
+Model_Path = 'model/model.bin'
