@@ -20,7 +20,8 @@ class DataLoader(Dataset):
             review,
             None,
             add_special_tokens=True,
-            max_length= CONFIG.max_len
+            max_length= CONFIG.max_len,
+            truncation=True
         )
         ids = input_['input_ids']
         mask = input_['attention_mask']
@@ -34,8 +35,8 @@ class DataLoader(Dataset):
         }
 
 class MyCollate:
-    def __init__(self):
-        self.pad_idx = 0
+    def __init__(self, pad_idx):
+        self.pad_idx = pad_idx
         self.mask_idx = 0
         self.token_type_idx = 0
     
@@ -70,6 +71,3 @@ class MyCollate:
             'token_type_ids' : token_type_ids,
             'sentiment' : sentiment
         }
-        
-
-
