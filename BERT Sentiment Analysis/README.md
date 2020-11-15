@@ -1,5 +1,9 @@
 # IMDB MOVIE REVIEWS SENTIMENT ANALYSIS 
 
+<p align="center">
+  <img src="https://mk0ecommercefas531pc.kinstacdn.com/wp-content/uploads/2019/12/sentiment-analysis.png" />
+</p>
+
 ## Introduction
 
 Sentiment Analysis is the process of determining whether a piece of writing is positive, negative or neutral. A sentiment analysis system for text analysis combines natural language processing (NLP) and machine learning techniques to assign weighted sentiment scores to the entities, topics, themes and categories within a sentence or phrase.
