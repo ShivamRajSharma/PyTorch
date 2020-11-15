@@ -8,6 +8,6 @@ Sentiment analysis helps data analysts within large enterprises gauge public opi
 
 # Dataset Information 
 
-The model was trained on IMDB movie reviews from kaggle. The dataset contains 50K movie reviews with 25k positive and 25k negetive movie reviews.
+The model was trained on IMDB movie reviews from kaggle. The dataset contains 50K movie reviews with 25k positive and 25k negetive movie reviews. </br>
 Dataset : https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews
 
