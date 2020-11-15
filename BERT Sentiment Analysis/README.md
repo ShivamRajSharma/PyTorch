@@ -21,14 +21,14 @@ Dataset : https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-revie
 
 ## Model Info
 
-1) Model : Pretrained BERT architecture was used which is an transformer based encoder architecture.
-2) Training Stratergy : The whole network was fine tuned on the dataset.
-3) Optimizer : Adam optimizer was used with weight decay.
+1) MODEL                   : Pretrained BERT architecture was used which is an transformer based encoder architecture.
+2) Trainin Stratergy       : The whole network was fine tuned on the dataset.
+3) Optimizer               : Adam optimizer was used with weight decay.
 4) Learning Rate Scheduler : Linear decay scheduler.
-5) Loss : Binary Cross-Entropy Loss.
-6) Metric : Accuracy.
-7) Performance : 95% Accuracy
-8) Training Time : 52 minutes
+5) Loss                    : Binary Cross-Entropy Loss.
+6) Metric                  : Accuracy.
+7) Performance             : 95% Accuracy
+8) Training Time           : 52 minutes
 
 
 
