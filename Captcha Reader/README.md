@@ -10,7 +10,6 @@ A CAPTCHA is a type of challenge–response test used in computing to determine 
 
 The overwhelming benefit of CAPTCHA is that it is highly effective against all but the most sophisticated bad bots. However, with the recent development of the neural networks in the field of computer vision, these CAPTCHAs can be easily decoded and bypassed requiring a more stronger method to classify a bot and a human.
 
-## Output
 
 ## Dataset Information
 
