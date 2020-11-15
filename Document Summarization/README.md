@@ -30,7 +30,8 @@ Dataset : https://www.kaggle.com/sunnysai12345/news-summary?select=news_summary_
   <img src="https://jalammar.github.io/images/t/transformer_resideual_layer_norm_3.png" height="300"/>
 </p>
 
-A Multi-headed self attention based transformer achetecture was used. A transformer is as encoder based archtecture used for machine translation, document summarization etc.
+A Multi-headed self attention based transformer achetecture was used. A transformer is as encoder based archtecture used for machine translation, document summarization etc.</br>
+Paper : https://arxiv.org/abs/1706.03762
 
 
 ## Extra Info
