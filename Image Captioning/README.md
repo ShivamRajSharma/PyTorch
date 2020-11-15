@@ -1,7 +1,5 @@
 # Image Captioning 
 
-## Introduction 
-
 Image Captioning refers to the process of generating textual description from an image – based on the objects and actions in the image. A pre-trained CNN based encoder to encode the image and a RNN decoder was used to decode the encoded image into captions
 
 ## Dataset 
