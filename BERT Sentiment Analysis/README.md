@@ -42,9 +42,10 @@ Paper : https://arxiv.org/abs/1706.03762
 2) Optimizer               : Adam optimizer was used with weight decay.
 3) Learning Rate Scheduler : Linear decay scheduler.
 4) Loss                    : Binary Cross-Entropy Loss.
-5) Performance Metric      : Accuracy.
-6) Epochs Trained          : 2
-6) Performance             : 95% Accuracy.
-7) Training Time           : 52 minutes.
+5) Regularization          : Weight Decay, Dropout, 
+6) Performance Metric      : Accuracy.
+7) Epochs Trained          : 2
+8) Performance             : 95% Accuracy.
+9) Training Time           : 52 minutes.
 </pre>
 
