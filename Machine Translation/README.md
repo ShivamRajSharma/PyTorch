@@ -4,7 +4,7 @@
   <img src="http://jalammar.github.io/images/t/The_transformer_encoders_decoders.png" height="300"/>
 </p>
 
-Neural machine translation (NMT) is an approach to machine translation that uses an artificial neural network to predict the likelihood of a sequence of words, typically modeling entire sentences in a single integrated model. An Encoder-Decoder based architecture is used to to to translate a sentence from one language to other. 
+Neural machine translation (NMT) is an approach to machine translation that uses an artificial neural network to predict the likelihood of a sequence of words, typically modeling entire sentences in a single integrated model. An Encoder-Decoder based architecture is used to to to translate a sentence from one language to other. </br>
 Here we translate German to English using an LSTM based network with a Teacher-Force ratio of 0.5 to further improve our model performance.</br>
 
 
