@@ -43,3 +43,8 @@ Paper : https://arxiv.org/abs/1706.03762
 8) Training Time           : 5 Hours.
 9) Decoding                : Greedy
 </pre>
+
+## Further Improvement 
+1) A Larger Dataset
+2) Pre-Training the model on a masked sentences.
+3) Beam Seach Decoding
