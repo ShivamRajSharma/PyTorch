@@ -19,7 +19,16 @@ Dataset : https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-revie
 4) To infer on the trained model run ```python3 predict.py```.
 
 
-## Model Architecure 
+## Model Info
 
-I used a pretrained BERT architecture, and fine tuned it on 
+1) Model : Pretrained BERT architecture was used which is an transformer based encoder architecture.
+2) Training Stratergy : The whole network was fine tuned on the dataset.
+3) Optimizer : Adam optimizer was used with weight decay.
+4) Learning Rate Scheduler : Linear decay scheduler.
+5) Loss : Binary Cross-Entropy Loss.
+6) Metric : Accuracy.
+7) Performance : 95% Accuracy
+8) Training Time : 52 minutes
+
+
 
