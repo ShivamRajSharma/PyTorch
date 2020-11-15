@@ -44,4 +44,5 @@ Paper : https://arxiv.org/abs/1706.03762
 6) Performance Metric      : .
 7) Epochs Trained          : 25.
 8) Training Time           : 5 Hours.
+9) Decoding                : Greedy
 </pre>
