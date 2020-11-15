@@ -16,3 +16,4 @@ We use a Pre-Trained VGG19 model to optimize the image by taking output from var
 
 ## Output
 
+<img src="https://github.com/ShivamRajSharma/PyTorch/blob/master/Style%20Transfer/Input/henry.jpg" height="280" /> |  + | <img src="https://github.com/ShivamRajSharma/PyTorch/blob/master/Style%20Transfer/Input/starry_night.jpg" height="280" /> | = | <img src="https://github.com/ShivamRajSharma/PyTorch/blob/master/Style%20Transfer/Output/generated_3800.png" height="280" />
