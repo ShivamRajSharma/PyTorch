@@ -1,7 +1,7 @@
 # IMDB MOVIE REVIEWS SENTIMENT ANALYSIS 
-<img src="https://mk0ecommercefas531pc.kinstacdn.com/wp-content/uploads/2019/12/sentiment-analysis.png" height="300" />
+
 <p align="center">
-  <img src="https://mk0ecommercefas531pc.kinstacdn.com/wp-content/uploads/2019/12/sentiment-analysis.png" height="300" />
+  <img src="https://mk0ecommercefas531pc.kinstacdn.com/wp-content/uploads/2019/12/sentiment-analysis.png" height="280" />
 </p>
 
 ## Introduction
@@ -27,7 +27,7 @@ Dataset : https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-revie
 
 ## Model Architecure 
 <p align="center">
-  <img src="https://www.vproexpert.com/wp-content/uploads/2019/12/google-bert-745x342-1.png" height="300" />
+  <img src="https://www.vproexpert.com/wp-content/uploads/2019/12/google-bert-745x342-1.png" height="280" />
 </p>
 
 Bidirectional Encoder Representations from Transformers (BERT) is a Transformer-based machine learning technique for natural language processing (NLP) pre-training developed by Google. BERT is a “deeply bidirectional” model meaning that BERT learns information from both the left and the right side of a token’s context during the training phase. The bidirectionality of a model is important for truly understanding the meaning of a language. Let’s see an example to illustrate this. There are two sentences in this example and both of them involve the word “bank”:
@@ -42,7 +42,8 @@ Paper : https://arxiv.org/abs/1706.03762
 2) Optimizer               : Adam optimizer was used with weight decay.
 3) Learning Rate Scheduler : Linear decay scheduler.
 4) Loss                    : Binary Cross-Entropy Loss.
-5) Metric                  : Accuracy.
+5) Performance Metric      : Accuracy.
+6) Epochs Trained          : 2
 6) Performance             : 95% Accuracy
 7) Training Time           : 52 minutes
 </pre>
