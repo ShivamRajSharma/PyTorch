@@ -1,14 +1,8 @@
 # Image Segmentation
 
-<p align="center">
-  <img src="https://theaisummer.com/assets/img/posts/Semantic_Segmentation/semseg.jpg" height="250"/>
-</p>
-
-## Introduction 
 Image segmentation is the process of partitioning an image into multiple segments (sets of pixels, also known as image objects). The goal of segmentation is to simplify and/or change the representation of an image into something that is more meaningful and easier to analyze. </br>
 Here we use a CNN based neural network is used with a combination of Dice Loss and Binary Cross-Entropy loss to partition an image. Instead of just using Binary Cross-Entropy loss we use Dice Loss with Binary Cross-Entropy which results in more fine edges.
 
-## Output
 
 ## Dataset Information
 
