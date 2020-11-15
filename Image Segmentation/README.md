@@ -25,7 +25,7 @@ Dataset : https://www.kaggle.com/ianmoone0617/chest-xray-with-masks-for-image-se
 ## Model Architecture 
 
 <p align="center">
-  <img src="https://miro.medium.com/max/1620/1*eKrh8FqJL3jodebYlielNg.png" height="330"/>
+  <img src="https://miro.medium.com/max/1620/1*eKrh8FqJL3jodebYlielNg.png" height="400"/>
 </p>
 
 Model architecture was U-Net with ResNet for the construction of the mask from the image for segmentation.</br>
