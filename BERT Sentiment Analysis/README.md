@@ -33,14 +33,13 @@ BERT is pre-trained on a large corpus of unlabelled text including the entire Wi
 
 
 ## Extra Info
-
-1) Trainin Stratergy&nbsp;&nbsp;: The whole network was fine tuned on the dataset.
+<pre>
+1) Trainin Stratergy       : The whole network was fine tuned on the dataset.
 2) Optimizer               : Adam optimizer was used with weight decay.
 3) Learning Rate Scheduler : Linear decay scheduler.
 4) Loss                    : Binary Cross-Entropy Loss.
 5) Metric                  : Accuracy.
 6) Performance             : 95% Accuracy
 7) Training Time           : 52 minutes
-
-
+</pre?>
 
