@@ -1,7 +1,7 @@
 # IMDB MOVIE REVIEWS SENTIMENT ANALYSIS 
 
 <p align="center">
-  <img src="https://mk0ecommercefas531pc.kinstacdn.com/wp-content/uploads/2019/12/sentiment-analysis.png" height="350" />
+  <img src="https://mk0ecommercefas531pc.kinstacdn.com/wp-content/uploads/2019/12/sentiment-analysis.png" height="300" />
 </p>
 
 ## Introduction
