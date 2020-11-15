@@ -1,6 +1,6 @@
 # Speech To Text Translator 
 
-Text to speech (TTS) is the use of software to create an audio output in the form of a spoken voice. The program that is used by programs to change text on the page to an audio output of the spoken voice is normally a text to speech engine. TTS engines are needed for an audio output of machine translation results. 
+Text to speech (TTS) is the use of software to create an audio output in the form of a spoken voice. The program that is used by programs to change text on the page to an audio output of the spoken voice is normally a text to speech engine. TTS engines are needed for an audio output of machine translation results. </br>
 The audio waves are converted to MFCC's which is a representation of the short-term power spectrum of a sound, based on a linear cosine transform of a log power spectrum on a nonlinear mel scale of frequency. 
 The MFCC is passed to an CNN-RNN based encoder decoder architecture with CTC loss to extract text from the audio.
 
