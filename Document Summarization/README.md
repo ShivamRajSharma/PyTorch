@@ -25,8 +25,22 @@ Dataset : https://www.kaggle.com/sunnysai12345/news-summary?select=news_summary_
 
 
 ## Model Architecture 
+
 <p align="center">
-  <img src="https://jalammar.github.io/images/t/transformer_resideual_layer_norm_3.png" height="200"/>
+  <img src="https://jalammar.github.io/images/t/transformer_resideual_layer_norm_3.png" height="300"/>
 </p>
 
+A Multi-headed self attention based transformer achetecture was used. A transformer is as encoder based archtecture used for machine translation, document summarization etc.
 
+
+## Extra Info
+<pre>
+1) Trainin Stratergy       : Training the whole network from scratch.
+2) Optimizer               : Adam optimizer was used with weight decay.
+3) Learning Rate Scheduler : Linear decay with warmup.
+4) Regularization          : Dropout, Weight decay, 
+5) Loss                    : Categorical Cross-Entropy.
+6) Performance Metric      : .
+7) Epochs Trained          : 25.
+8) Training Time           : 5 Hours.
+</pre>
