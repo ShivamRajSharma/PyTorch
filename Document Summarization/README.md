@@ -36,7 +36,7 @@ Paper : https://arxiv.org/abs/1706.03762
 
 ## Extra Info
 <pre>
-1) Trainin Stratergy       : Training the whole network from scratch.
+1) Training Stratergy       : Training the whole network from scratch.
 2) Optimizer               : Adam optimizer was used with weight decay.
 3) Learning Rate Scheduler : Linear decay with warmup.
 4) Regularization          : Dropout, Weight decay, 
