@@ -50,3 +50,10 @@ Model architeture is an Enoder-Decoder architecture with
 7) Epochs Trained          : 10-20.
 8) Training Time           : 2 minutes.
 </pre>
+
+## Further Improvement
+1) Larger Dataset
+2) More Regularization
+3) Beam Search Decoding
+4) Better Encoder Architecture 
+5) Attention Based Decoder Architecture
