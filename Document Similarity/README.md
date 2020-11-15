@@ -42,3 +42,8 @@ A Siamese LSTM based network was used with an "ALL vs ALL" loss instead of tripe
 7) Epochs Trained          : 5
 8) Training Time           : 1 hour
 </pre>
+
+## Further Improvement 
+1) Using Multiheaded attetion.
+2) Using Pre-trained Encoder based transformer architecture.
+3) Using Universal Sentence Encoder.
