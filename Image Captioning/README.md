@@ -41,7 +41,7 @@ The model is an Encoder-Decoder based CNN-RNN achtecture with:
 9) Decoding                : Greedy
 </pre>
 
-# Further Improvement
+## Further Improvement
 1) Larger Dataset
 2) Attention based Decoder 
 3) Beam Search decoding
