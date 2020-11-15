@@ -38,13 +38,13 @@ Paper : https://arxiv.org/abs/1706.03762
 
 ## Extra Info
 <pre>
-1) Trainin Stratergy       : The whole network was fine tuned on the dataset.
+1) Trainin Stratergy       : The whole network was fine-tuned on the dataset.
 2) Optimizer               : Adam optimizer was used with weight decay.
 3) Learning Rate Scheduler : Linear decay scheduler.
 4) Loss                    : Binary Cross-Entropy Loss.
 5) Performance Metric      : Accuracy.
 6) Epochs Trained          : 2
-6) Performance             : 95% Accuracy
-7) Training Time           : 52 minutes
+6) Performance             : 95% Accuracy.
+7) Training Time           : 52 minutes.
 </pre>
 
