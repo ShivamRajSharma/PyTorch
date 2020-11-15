@@ -8,9 +8,6 @@ Neural machine translation (NMT) is an approach to machine translation that uses
 Here we translate German to English using an LSTM based network with a Teacher-Force ratio of 0.5 to further improve our model performance.</br>
 
 
-## Output
-
-
 ## Dataset Information
 
 The model was trained on a subset of WMT-2014 English-German Dataset. Preprocessing was carried out before training the model.</br>
