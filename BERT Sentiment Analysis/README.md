@@ -1,4 +1,4 @@
-# IMDB MOVIE REVIEWS SENTIMENT ANALYSIS 
+# Imdb Movie Reviews Sentiment Analysis 
 
 <p align="center">
   <img src="https://mk0ecommercefas531pc.kinstacdn.com/wp-content/uploads/2019/12/sentiment-analysis.png" height="280" />
