@@ -45,8 +45,8 @@ Model architeture is an Enoder-Decoder architecture with
 2) Optimizer               : Adam optimizer was used with weight decay.
 3) Learning Rate Scheduler : Exponential decay at Plateau.
 4) Regularization          : Dropout, 
-4) Loss                    : CTC Loss.
-5) Performance Metric      : CTC Loss.
-6) Epochs Trained          : 10-20.
-7) Training Time           : 2 minutes.
+5) Loss                    : CTC Loss.
+6) Performance Metric      : CTC Loss.
+7) Epochs Trained          : 10-20.
+8) Training Time           : 2 minutes.
 </pre>
