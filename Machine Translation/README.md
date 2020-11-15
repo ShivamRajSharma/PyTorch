@@ -1,7 +1,7 @@
 # Neural Machine Translation 
 
 <p align="center">
-  <img src="https://1.bp.blogspot.com/-jwgtcgkgG2o/WDSBrwu9jeI/AAAAAAAABbM/2Eobq-N9_nYeAdeH-sB_NZGbhyoSWgReACLcB/s640/image01.gif" height="200"/>
+  <img src="http://jalammar.github.io/images/t/The_transformer_encoders_decoders.png" height="250"/>
 </p>
 
 ## Introduction 
@@ -27,7 +27,7 @@ Dataset :  https://nlp.stanford.edu/projects/nmt/
 ## Model Architecture 
 
 <p align="center">
-  <img src="https://miro.medium.com/max/4000/0*UldQZaGB0w3omI3Y.png" height="200"/>
+  <img src="https://miro.medium.com/max/4000/0*UldQZaGB0w3omI3Y.png" height="300"/>
 </p>
 
 An Bi-Directional based Encoder-Decoder architecture with a default Teacher-Force ratio of 0.5
