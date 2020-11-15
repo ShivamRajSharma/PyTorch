@@ -17,7 +17,7 @@ Dataset : https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-revie
 
 ## Usage 
 
-1) Install the required libraries in requirement.txt
+1) Install the required libraries mentioned in requirement.txt.
 2) Download the dataset from url provided above and place it inside ``` input/ ``` folder.
 3) Run ```python3 train.py``` and let the model train for 2-3 iterations.
 4) To infer on the trained model run ```python3 predict.py```.
@@ -34,7 +34,7 @@ BERT is pre-trained on a large corpus of unlabelled text including the entire Wi
 
 ## Extra Info
 
-1) Trainin Stratergy       : The whole network was fine tuned on the dataset.
+1) Trainin Stratergy&nbsp;&nbsp;: The whole network was fine tuned on the dataset.
 2) Optimizer               : Adam optimizer was used with weight decay.
 3) Learning Rate Scheduler : Linear decay scheduler.
 4) Loss                    : Binary Cross-Entropy Loss.
