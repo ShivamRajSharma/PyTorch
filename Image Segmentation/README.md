@@ -42,3 +42,6 @@ Paper : https://arxiv.org/abs/1505.04597
 7) Epochs Trained          : .
 8) Training Time           : 
 </pre>
+
+## Further Improvement
+1) Larger Dataset
