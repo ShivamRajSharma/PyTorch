@@ -19,16 +19,24 @@ Dataset : https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-revie
 4) To infer on the trained model run ```python3 predict.py```.
 
 
-## Model Info
+## Model Architecure 
+<p align="center">
+  <img src="https://www.vproexpert.com/wp-content/uploads/2019/12/google-bert-745x342-1.png" />
+</p>
 
-1) MODEL                   : Pretrained BERT architecture was used which is an transformer based encoder architecture.
-2) Trainin Stratergy       : The whole network was fine tuned on the dataset.
-3) Optimizer               : Adam optimizer was used with weight decay.
-4) Learning Rate Scheduler : Linear decay scheduler.
-5) Loss                    : Binary Cross-Entropy Loss.
-6) Metric                  : Accuracy.
-7) Performance             : 95% Accuracy
-8) Training Time           : 52 minutes
+Bidirectional Encoder Representations from Transformers (BERT) is a Transformer-based machine learning technique for natural language processing (NLP) pre-training developed by Google. BERT is a “deeply bidirectional” model meaning that BERT learns information from both the left and the right side of a token’s context during the training phase. The bidirectionality of a model is important for truly understanding the meaning of a language. Let’s see an example to illustrate this. There are two sentences in this example and both of them involve the word “bank”:
+BERT is pre-trained on a large corpus of unlabelled text including the entire Wikipedia(that’s 2,500 million words!) and Book Corpus (800 million words).
+
+
+## Extra Info
+
+1) Trainin Stratergy       : The whole network was fine tuned on the dataset.
+2) Optimizer               : Adam optimizer was used with weight decay.
+3) Learning Rate Scheduler : Linear decay scheduler.
+4) Loss                    : Binary Cross-Entropy Loss.
+5) Metric                  : Accuracy.
+6) Performance             : 95% Accuracy
+7) Training Time           : 52 minutes
 
 
 
