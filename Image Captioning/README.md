@@ -29,7 +29,7 @@ The model is an Encoder-Decoder based CNN-RNN achtecture with:
 
 ## Extra Info
 <pre>
-1) Training Stratergy      : Training the whole network from scratch.
+1) Training Stratergy      : Only Decoder part was trained.
 2) Optimizer               : Adam optimizer was used with weight decay.
 3) Learning Rate Scheduler : Exponential decay at Plateau.
 4) Regularization          : Dropout, Image Augmentation
