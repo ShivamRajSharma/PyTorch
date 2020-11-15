@@ -30,5 +30,18 @@ Dataset : https://www.kaggle.com/c/quora-question-pairs/data?select=train.csv.zi
   <img src="https://www.researchgate.net/profile/Tuan_Lai4/publication/336443055/figure/fig3/AS:812860531818507@1570812461956/QA-LSTM-with-attention-figure-adapted-from-Tan-et-al-2015.png" height="280" />
 </p>
 
-A Siamese LSTM based network with "ALL vs ALL" loss instead of tripet loss in which all examples in a batch are compared with the rest of the examples in a batch.
+A Siamese LSTM based network with "ALL vs ALL" loss instead of tripet loss in which all examples in a batch are compared with the rest of the examples in a batch based on the cosine similarity of a document vector. Hard negetive mining was used to find the difference between hard negetive que pairs.
 
+
+## Extra Info
+<pre>
+1) Trainin Stratergy       : Training the whole network from scratch.
+2) Optimizer               : Adam optimizer was used with weight decay.
+3) Learning Rate Scheduler : Exponential decay at Plateau.
+4) Regularization          : Dropout, 
+5) Loss                    : All vs All loss.
+6) Performance Metric      : AUC Score.
+7) Performance             : 0.68 AUC Score
+7) Epochs Trained          : 5
+8) Training Time           : 1 hour
+</pre>
