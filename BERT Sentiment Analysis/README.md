@@ -41,5 +41,5 @@ BERT is pre-trained on a large corpus of unlabelled text including the entire Wi
 5) Metric                  : Accuracy.
 6) Performance             : 95% Accuracy
 7) Training Time           : 52 minutes
-</pre?>
+</pre>
 
