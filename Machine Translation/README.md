@@ -1,7 +1,7 @@
 # Neural Machine Translation 
 
 <p align="center">
-  <img src="http://jalammar.github.io/images/t/The_transformer_encoders_decoders.png" height="250"/>
+  <img src="http://jalammar.github.io/images/t/The_transformer_encoders_decoders.png" height="300"/>
 </p>
 
 ## Introduction 
