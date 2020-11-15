@@ -4,13 +4,10 @@
   <img src="https://res.cloudinary.com/match2lists/image/upload/v1497274659/Match_600_gcdvaf.png" height="220" />
 </p>
 
-## Introduction
-
 Document similarity, as the name suggests determines how similar are the two given documents. By “documents”, we mean a collection of strings. Measuring pairwise document similarity is an essential operation in various text mining tasks. </br> 
 
 Most of the similarity measures judge the similarity between two documents by converting the text of each respective document as a vector, consisting of continous values that can be compared the other document vector. With the recent development of the deep learning techniques like RNN, LSTM have leveraged the preformance of mesuring the similarity between two documents by measuring the distance between vectors of respective document, resulting in a more accuracte document's extraction process that can be applied in a search engine.
 
-## Output
 
 ## Dataset Information 
 The model was trained on a subset of Quora Question Pairs from kaggle. The dataset contains 400k question pairs out of which  25% are a matching pair.  </br>
