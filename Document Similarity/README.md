@@ -10,7 +10,7 @@ Most of the similarity measures judge the similarity between two documents by co
 
 
 ## Dataset Information 
-The model was trained on a subset of Quora Question Pairs from kaggle. The dataset contains 400k question pairs out of which  25% are a matching pair.  </br>
+The model was trained on a subset of Quora Question Pairs from kaggle.  </br>
 Dataset : https://www.kaggle.com/c/quora-question-pairs/data?select=train.csv.zip
 
 ## Usage 
