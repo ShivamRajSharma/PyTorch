@@ -37,9 +37,9 @@ A Unidirectional based simple GRU network with word to POS mapping.
 4) Loss                    : Categorical Cross-Entropy Loss.
 5) Regularization          : Dropout
 6) Performance Metric      : Accuracy.
-7) Epochs Trained          : 
-8) Performance             : .
-9) Training Time           : .
+7) Epochs Trained          : 1
+8) Performance             : 97.1% Accuracy.
+9) Training Time           : 1 minute.
 </pre>
 
 ## Further Improvement 
