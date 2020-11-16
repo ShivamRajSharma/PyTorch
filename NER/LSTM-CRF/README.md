@@ -8,7 +8,7 @@ Named-entity recognition (NER) (also known as (named) entity identification, ent
 is a subtask of information extraction that seeks to locate and classify named entities mentioned in unstructured text into pre-defined 
 categories such as person names, organizations, locations, medical codes, time expressions, quantities, monetary values, percentages, etc. </br>
 
-In this repository we train a simple LSTM based network, and introduce CRF transition matrix that is calculates the score of transitioning from the current POS to the future POS. Although LSTM tagger above is typically sufficient for part-of-speech tagging, but a sequence model like the CRF is really essential for strong performance on NER. This implementation is based on [Pytorch CRF-BiLSTM model](https://pytorch.org/tutorials/beginner/nlp/advanced_tutorial.html)
+In this repository we train a LSTM based network, and futher introducing a CRF transition matrix in the last output layer of LSTM that calculates the cost of transitioning from the current POS to the next POS. Although LSTM tagger above is typically sufficient for part-of-speech tagging, but a sequence model like the CRF is really essential for strong performance on NER. This implementation is based on [Pytorch CRF-BiLSTM model](https://pytorch.org/tutorials/beginner/nlp/advanced_tutorial.html)
 
 ## Dataset Information 
 
