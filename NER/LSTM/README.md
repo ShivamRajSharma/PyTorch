@@ -28,7 +28,7 @@ Dataset : https://www.kaggle.com/abhinavwalia95/entity-annotated-corpus
   <img src="https://info.itemis.com/hubfs/Blog/DataScience/RNN-based-on-GRU-cells.jpg" height="350" />
 </p>
 
-A Unidirectional based simple GRU network with 2 layered output for NER and POS tagging respectively.
+A Unidirectional based simple GRU network with 2 headed output for NER and POS tagging respectively.
 
 ## Extra Info
 <pre>
