@@ -1,6 +1,6 @@
-# Question And Answering
+# Question And Answering System
 
-Question Answering using RoBERTa on Tweet-Sentiment Extraction Dataset as context
+Question Answering System using RoBERTa model on Tweet-Sentiment Extraction Dataset as context. As input a comprehession and a question are passed to the network and the network tries to find the answer to the question within the comprehession.
 
 ## Dataset Information
 The model was trained on Tweet-Sentiment Extraction from kaggle.</br>
