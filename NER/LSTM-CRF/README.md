@@ -10,9 +10,7 @@ categories such as person names, organizations, locations, medical codes, time e
 
 This implementation is based on [Pytorch CRF-BiLSTM model](https://pytorch.org/tutorials/beginner/nlp/advanced_tutorial.html)
 
-In this repository we train a simple LSTM based network, and introduce CRF transition matrix that is calculates the score of transitioning from the current POS to the future POS.
-
-Although LSTM tagger above is typically sufficient for part-of-speech tagging, but a sequence model like the CRF is really essential for strong performance on NER. 
+In this repository we train a simple LSTM based network, and introduce CRF transition matrix that is calculates the score of transitioning from the current POS to the future POS. Although LSTM tagger above is typically sufficient for part-of-speech tagging, but a sequence model like the CRF is really essential for strong performance on NER. 
 
 ## Dataset Information 
 
@@ -47,6 +45,5 @@ A BiDirectional based CRF LSTM network with word to POS mapping.
 </pre>
 
 ## Further Improvement 
-1) Larger Dataset.
-2) CRF at the final layer.
+1) An efficient method to train in batches
 3) Attention based network.
