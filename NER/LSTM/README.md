@@ -1,4 +1,4 @@
-# Named Entity Recognition
+# Named Entity Recognition and Part-Of-Speech Tagging
 
 <p align="center">
   <img src="https://cdn-images-1.medium.com/max/1000/1*EtZzTLreinuaZ9TtfuXhAw.png" height="150" />
@@ -8,11 +8,11 @@ Named-entity recognition (NER) (also known as (named) entity identification, ent
 is a subtask of information extraction that seeks to locate and classify named entities mentioned in unstructured text into pre-defined 
 categories such as person names, organizations, locations, medical codes, time expressions, quantities, monetary values, percentages, etc. </br>
 
-In this repository we train a simple GRU based recurrent nueral network for Part-Of-Speech application from scratch, achieving good results even with a small network.
+In this repository we train a simple GRU based recurrent nueral network for simultaneous Named Entity Recognition with Part-Of-Speech Tagging application from scratch, achieving good results even with a small network.
 
 ## Dataset Information 
 
-The model was trained on NER dataset from kaggle. The dataset contains a total of 47k sentences with a total of 41 POS tags  . </br>
+The model was trained on NER dataset from kaggle. The dataset contains a total of 47k sentences with a total of 17 NER tags and 42 POS tags. </br>
 Dataset : https://www.kaggle.com/abhinavwalia95/entity-annotated-corpus
 
 ## Usage 
@@ -28,7 +28,7 @@ Dataset : https://www.kaggle.com/abhinavwalia95/entity-annotated-corpus
   <img src="https://info.itemis.com/hubfs/Blog/DataScience/RNN-based-on-GRU-cells.jpg" height="350" />
 </p>
 
-A Unidirectional based simple GRU network with word to POS mapping.
+A Unidirectional based simple GRU network with 2 layered output for NER and POS tagging respectively.
 
 ## Extra Info
 <pre>
@@ -37,9 +37,10 @@ A Unidirectional based simple GRU network with word to POS mapping.
 4) Loss                    : Categorical Cross-Entropy Loss.
 5) Regularization          : Dropout
 6) Performance Metric      : Accuracy.
-7) Epochs Trained          : 1
-8) Performance             : 97.1% Accuracy.
-9) Training Time           : 1 minute.
+7) Epochs Trained          : 2
+8) POS Performance         : 
+9) NER Performance         :
+9) Training Time           : 
 </pre>
 
 ## Further Improvement 
