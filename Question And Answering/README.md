@@ -1,7 +1,7 @@
 # Question And Answering System
 
  <p align="center">
-  <img src=""/>
+  <img src="https://github.com/ShivamRajSharma/PyTorch/blob/master/Question%20And%20Answering/QnA.png"/>
 </p>
 
 An End to End implementation of a Question Answering System using RoBERTa model on Tweet-Sentiment Extraction Dataset as context. As input a comprehession and a question are passed to the network and the network tries to find the answer to the question within the comprehession and extract it.
