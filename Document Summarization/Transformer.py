@@ -121,7 +121,7 @@ class DecoderBlock(nn.Module):
         causal_mask
     ):
         attention = self.attention(query, query, query, causal_mask)
-        add = self.dropout(self.layer_norm(attention + query))
+        query = self.dropout(self.layer_norm(attention + query))
         out = self.transformer_block(query, key, value, src_mask)
 
         return out
