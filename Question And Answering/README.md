@@ -13,6 +13,11 @@ Dataset : https://www.kaggle.com/c/tweet-sentiment-extraction
 3) Run ```python3 train.py``` and let the model train for 10 iterations.
 4) To infer on the trained model run ```python3 predict.py```.
 
+## Results:
+<p align="center">
+  <img src="https://github.com/ShivamRajSharma/PyTorch/blob/master/Question%20And%20Answering/Output/output.png" />
+</p>
+
 ## Model Architecture 
 
 <p align="center">
