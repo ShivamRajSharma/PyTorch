@@ -42,9 +42,9 @@ A Unidirectional based simple GRU network with 2 headed output for NER and POS t
 5) Regularization          : Dropout
 6) Performance Metric      : Accuracy.
 7) Epochs Trained          : 2
-8) POS Performance         : 
-9) NER Performance         :
-9) Training Time           : 
+8) POS Performance         : 97.2%
+9) NER Performance         : 97.5%
+9) Training Time           : 12 sec
 </pre>
 
 ## Further Improvement 
