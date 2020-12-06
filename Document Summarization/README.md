@@ -20,6 +20,9 @@ Dataset : https://www.kaggle.com/sunnysai12345/news-summary?select=news_summary_
 3) Run ```python3 train.py``` and let the model train for 10 iterations.
 4) To infer on the trained model run ```python3 predict.py```.
 
+## Results:
+  <img src="https://github.com/ShivamRajSharma/PyTorch/blob/master/Document%20Summarization/Output/output.png"/>
+
 
 ## Model Architecture 
 
