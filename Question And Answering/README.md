@@ -39,5 +39,5 @@ Paper : https://arxiv.org/abs/1907.11692
 6) Performance Metric      : Jaccard Distance.
 7) Epochs Trained          : 3
 8) Performance             : 71.3 Jaccard Score.
-9) Training Time           : .
+9) Training Time           : 1.5 hours
 </pre>
