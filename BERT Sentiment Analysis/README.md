@@ -24,6 +24,10 @@ Dataset : https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-revie
 3) Run ```python3 train.py``` and let the model train for 2-3 iterations.
 4) To infer on the trained model run ```python3 predict.py```.
 
+## Results 
+<img src="https://github.com/ShivamRajSharma/PyTorch/blob/master/BERT%20Sentiment%20Analysis/Output/output_1.png"/>
+<img src="https://github.com/ShivamRajSharma/PyTorch/blob/master/BERT%20Sentiment%20Analysis/Output/output_2.png" />
+
 
 ## Model Architecure 
 <p align="center">
