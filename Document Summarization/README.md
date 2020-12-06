@@ -38,8 +38,8 @@ Paper : https://arxiv.org/abs/1706.03762
 3) Learning Rate Scheduler : Linear decay with warmup.
 4) Regularization          : Dropout, Weight decay, 
 5) Loss                    : Categorical Cross-Entropy.
-6) Performance Metric      : .
-7) Epochs Trained          : 25.
+6) Performance Metric      : Categorical Cross-Entropy Loss.
+7) Epochs Trained          : 30.
 8) Training Time           : 5 Hours.
 9) Decoding                : Greedy
 </pre>

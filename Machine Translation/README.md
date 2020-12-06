@@ -40,7 +40,7 @@ An Bi-Directional based Encoder-Decoder architecture with a default Teacher-Forc
 5) Loss                    : Categorical Cross-Entropy.
 6) Performance Metric      : BLEU SCORE.
 7) Performance             : 19.75
-7) Epochs Trained          : .
+7) Epochs Trained          : 40
 8) Training Time           : .
 9) Decoding                : Greedy</br>
 </pre>
