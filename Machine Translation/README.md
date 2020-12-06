@@ -26,9 +26,7 @@ Dataset :  https://nlp.stanford.edu/projects/nmt/</br>
 
 1) BLEU Score:
 
-<p align="center">
   <img src="https://github.com/ShivamRajSharma/PyTorch/blob/master/Machine%20Translation/Output/bleu_score_plot.png"/>
-</p>
 
 2) Translation Output:
   <img src="https://github.com/ShivamRajSharma/PyTorch/blob/master/Machine%20Translation/Output/output.png"/>
