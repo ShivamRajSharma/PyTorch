@@ -21,7 +21,7 @@ Dataset : https://www.kaggle.com/sunnysai12345/news-summary?select=news_summary_
 4) To infer on the trained model run ```python3 predict.py```.
 
 ## Results:
-  <img src="https://github.com/ShivamRajSharma/PyTorch/blob/master/Document%20Summarization/Output/output.png" height="100" />
+  <img src="https://github.com/ShivamRajSharma/PyTorch/blob/master/Document%20Summarization/Output/output.png" height="70" />
 
 
 ## Model Architecture 
