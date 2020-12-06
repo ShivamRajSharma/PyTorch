@@ -11,6 +11,6 @@ Batch_size = 2
 mean = (0, 0, 0)
 std = (1, 1, 1)
 
-pred_threshold = 0.5
+pred_threshold = 0.7
 bce_loss_coeff = 0
 dice_loss_coeff = 1

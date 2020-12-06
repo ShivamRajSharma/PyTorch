@@ -33,6 +33,7 @@ def predict(sentence):
     )
 
     model.load_state_dict(torch.load(CONFIG.MODEL_PATH))
+    model.eval()
 
     sentence_idx = []
     for word in tokenizer(sentence):
@@ -48,30 +49,23 @@ def predict(sentence):
 
     summary = []
 
-    print('predicting')
-    for _ in range(max_len):
-        summary_idx = torch.tensor(summary_idx_).unsqueeze(0)
-        output = model(sentence_idx, summary_idx)
-        output = torch.softmax(output, dim=-1)
-        output = torch.argmax(output, dim=-1)[:, -1].item()
-        summary_idx_.append(output)
-        if output == word_to_idx["<EOS>"]:
-            break
-        summary.append(idx_to_word[output])
+    with torch.no_grad():
+        for _ in range(max_len):
+            summary_idx = torch.tensor(summary_idx_).unsqueeze(0)
+            output = model(sentence_idx, summary_idx)
+            output = torch.softmax(output, dim=-1)
+            output = torch.argmax(output, dim=-1)[:, -1].item()
+            summary_idx_.append(output)
+            if output == word_to_idx["<EOS>"]:
+                break
+            summary.append(idx_to_word[output])
     
     summary = ' '.join(summary)
-    print(summary)
+    print(f'[ARTICLE] -> {sentence}\n')
+    print(f'[SUMMARY] -> {summary}')
 
 
 if __name__ == "__main__":
-    sentence = ""
-    predict(sentence)
-
-
-        
-
-
-
-
     
-
+    sentence = '''Saurav Kant, an alumnus of upGrad and IIIT-B's PG Program in Machine learning and Artificial Intelligence, was a Sr Systems Engineer at Infosys with almost 5 years of work experience. The program and upGrad's 360-degree career support helped him transition to a Data Scientist at Tech Mahindra with 90% salary hike. upGrad's Online Power Learning has powered 3 lakh+ careers.'''
+    predict(sentence)

@@ -2,6 +2,7 @@ import CONFIG
 
 import torch 
 import torch.nn as nn 
+from torch.nn.functional import normalize
 
 class BaseModel(nn.Module):
     def __init__(
@@ -18,24 +19,19 @@ class BaseModel(nn.Module):
         self.embedding = nn.Embedding(voacb_size, embed_dims)
         self.layer_norm1 = nn.LayerNorm(embed_dims)
         self.dropout = nn.Dropout(dropout)
-        self.rnn = nn.GRU(
+        self.rnn = nn.LSTM(
             embed_dims, 
             hidden_dims, 
             num_layers, 
             dropout=dropout,
             bidirectional=bidirectional)
-        self.similarity_vect = nn.Sequential(
-            nn.Linear(hidden_dims*2 if bidirectional else hidden_dims, hidden_dims//2),
-            nn.LeakyReLU(),
-            nn.Dropout(dropout),
-            nn.Linear(hidden_dims//2, out_dims)
-        )
+        
     
     def forward(self, x):
-        x = self.dropout(self.layer_norm1(self.embedding(x)))
+        x = self.dropout(self.embedding(x))
         x, _ = self.rnn(x)
         x = x.mean(dim=1)
-        x = self.similarity_vect(x)
+        x = normalize(x, p=2, dim=1)
         return x
 
 
@@ -65,7 +61,3 @@ class DocSimModel(nn.Module):
         q1_vec = self.base_model(doc1)
         q2_vec = self.base_model(doc2)
         return q1_vec, q2_vec
-
-
-
-    

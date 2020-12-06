@@ -54,7 +54,7 @@ class TransformerBlock(nn.Module):
         attention = self.attention(query, key, value, mask)
         add =  self.dropout(self.layer_norm1(attention + query))
         fc = self.feed_forward(add)
-        out =  self.dropout(self.layer_norm1(add + fc))
+        out =  self.dropout(self.layer_norm2(add + fc))
         return out
 
 class Encoder(nn.Module):
@@ -266,8 +266,3 @@ if __name__ == "__main__":
     )
     y = model(inputs, targets)
     print(y.shape)
-
-
-
-
-

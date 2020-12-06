@@ -1,6 +1,5 @@
 import CONFIG
 import UNet
-
 import torch 
 import torch.nn as nn
 import cv2
@@ -39,7 +38,8 @@ def predict(image_path):
     image[:, :, 1] = image[:, :, 1]*(1-prediction)
 
     cv2.imwrite('output/segmented.jpg', image)
-    
-    
+
+
 if __name__ == "__main__":
-    predict('input/CXR_png/CHNCXR_0001_0.png')
+    predict('input/CXR_png/CHNCXR_0002_0.png')
+

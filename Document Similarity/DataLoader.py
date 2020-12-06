@@ -1,4 +1,6 @@
+import os
 import spacy
+import pickle
 import torch 
 import torch.nn as nn
 from tqdm import tqdm
@@ -10,19 +12,25 @@ class Vocabulary:
         self.tokenizer = spacy.load('en_core_web_sm')
     
     def vocab_gen(self, data):
-        num = 2
-        for sentence in tqdm(data, total=len(data)):
-            for word in self.tokenizer(sentence):
-                word = str(word.text.lower)
-                if word not in self.word_to_idx:
-                    self.word_to_idx[word] = num
-                    self.idx_to_word[num] = word
-                    num += 1
+        if os.path.exists('input/word_to_idx.pickle') and os.path.exists('input/idx_to_word.pickle'):
+            print('----- [INFO] LOADING PRECOMPUTED TOKENIZER -----')
+            self.word_to_idx = pickle.load(open('input/word_to_idx.pickle', 'rb'))
+            self.idx_to_word = pickle.load(open('input/idx_to_word.pickle', 'rb'))
+        else:
+            num = 2
+            for ques in data:
+                for sentence in tqdm(ques, total=len(ques)):
+                    for word in self.tokenizer(sentence):
+                        word = str(word.text.lower())
+                        if word not in self.word_to_idx:
+                            self.word_to_idx[word] = num
+                            self.idx_to_word[num] = word
+                            num += 1
     
     def numericalize(self, sentence):
         sentence_idx = []
         for word in self.tokenizer(sentence):
-            word = str(word.text.lower)
+            word = str(word.text.lower())
             if word in self.word_to_idx:
                 sentence_idx.append(self.word_to_idx[word])
             else:
@@ -36,8 +44,7 @@ class DataLoader(torch.utils.data.Dataset):
         self.que_2 = df.question2.values
         self.labels =  df.is_duplicate.values
         self.vocab =  Vocabulary()
-        self.vocab.vocab_gen(self.que_1)
-        self.vocab.vocab_gen(self.que_2)
+        self.vocab.vocab_gen([self.que_1, self.que_2])
     
     def __len__(self):
         return len(self.que_1)
@@ -91,3 +98,4 @@ class MyCollate:
 
 if __name__ == "__main__":
     pass
+
