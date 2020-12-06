@@ -40,8 +40,8 @@ Paper : https://arxiv.org/abs/1505.04597
 4) Regularization          : Dropout 
 5) Loss                    : Dice Loss + Binary Cross-Entropy Loss
 6) Performance Metric      : Dice Loss + Binary Cross-Entropy Loss.
-7) Epochs Trained          : .
-8) Training Time           : 
+7) Epochs Trained          : 35
+8) Training Time           : 1.5 Hous
 </pre>
 
 ## Further Improvement
