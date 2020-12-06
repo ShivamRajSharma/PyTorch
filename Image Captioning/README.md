@@ -33,7 +33,7 @@ The model is an Encoder-Decoder based CNN-RNN achtecture with:
 4) Regularization          : Dropout, Image Augmentation
 5) Loss                    : Categorical Cross-Entropy 
 6) Epochs Trained          : 20.
-7) Training Time           : 
+7) Training Time           : ~ 1 Hour
 8) Decoding                : Greedy
 </pre>
 
