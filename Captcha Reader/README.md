@@ -22,7 +22,9 @@ The dataset contains 1040 captcha files as png images. The label for each sample
 4) To infer on the trained model run ```python3 predict.py```.
 
 ## Result:
-<img src="https://github.com/ShivamRajSharma/PyTorch/blob/master/Captcha%20Reader/Output/output.png"/>
+<p align="center">
+  <img src="https://github.com/ShivamRajSharma/PyTorch/blob/master/Captcha%20Reader/Output/output.png"/>
+</p>
 
 
 ## Model Architecture 
