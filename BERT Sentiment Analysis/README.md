@@ -52,3 +52,6 @@ Paper : https://arxiv.org/abs/1706.03762
 9) Training Time           : 52 minutes.
 </pre>
 
+## Further Improvement
+1) Larger Dataset
+
