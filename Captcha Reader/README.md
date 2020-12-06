@@ -21,6 +21,10 @@ The dataset contains 1040 captcha files as png images. The label for each sample
 3) Run ```python3 train.py``` and let the model train for 10 iterations.
 4) To infer on the trained model run ```python3 predict.py```.
 
+## Result:
+<img src="https://github.com/ShivamRajSharma/PyTorch/blob/master/Captcha%20Reader/Output/output.png"/>
+
+
 ## Model Architecture 
 
 <p align="center">
