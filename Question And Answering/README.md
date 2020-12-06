@@ -41,3 +41,6 @@ Paper : https://arxiv.org/abs/1907.11692
 8) Performance             : 71.3 Jaccard Score.
 9) Training Time           : 1.5 hours
 </pre>
+
+## Further Improvement 
+1) Larger Dataset
