@@ -1,6 +1,6 @@
 import engine
 import DataLoader
-import ASRModel
+import MODEL
 import CONFIG
 
 import os
@@ -47,7 +47,7 @@ def run():
     
     train_data = np.array(train_data)
     val_data = np.array(val_data)
-    char_to_idx = pickle.load(open('input/char_to_idx.pickle', 'rb'))
+    char_to_idx = pickle.load(open('../input/char_to_idx.pickle', 'rb'))
 
     transforms = [
         torchaudio.transforms.FrequencyMasking(freq_mask_param=15),
@@ -78,7 +78,7 @@ def run():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     torch.backends.cudnn.benchmark=True
     
-    model = ASRModel.ASRModel(
+    model = MODEL.ASRModel(
         input_channel=1, 
         out_channel=CONFIG.out_channel, 
         kernel_size=CONFIG.kernel_size, 
@@ -95,20 +95,21 @@ def run():
 
     model = model.to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=CONFIG.LR)
-    scheduler = torch.optim.lr_scheduler.OneCycleLR(
+
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
         optimizer,
-        max_lr=CONFIG.LR,
-        steps_per_epoch=int(len(train_loader)),
-        epochs=CONFIG.Epochs,
-        anneal_strategy='linear'
+        threshold=CONFIG.scheduler_threshold,
+        mode='min',
+        patience=CONFIG.scheduler_patience,
     )
 
     best_loss = 1e4
 
     print('-------------- [INFO] STARTING TRAINING ---------------')
     for epoch in range(CONFIG.Epochs):
-        train_loss = engine.train_fn(model, train_loader, optimizer, scheduler, device)
+        train_loss = engine.train_fn(model, train_loader, scheduler, device)
         val_loss = engine.eval_fn(model, val_loader, device)
+        scheduler.step(val_loss)
         print(f'\nEPOCH -> {epoch+1}/{CONFIG.Epochs} | TRAIN LOSS -> {train_loss} | VAL LOSS -> {val_loss} \n')
         if best_loss > val_loss:
             best_loss=val_loss

@@ -7,7 +7,7 @@ from tqdm import tqdm
 def loss_fn(output, target, mel_len, target_len):
     return torch.nn.CTCLoss(blank=CONFIG.blank_idx)(output, target, mel_len, target_len)
 
-def train_fn(model, dataloader, optmizer, scheduler, device):
+def train_fn(model, dataloader, optmizer, device):
     model.train()
     running_loss = 0 
     for num_steps, data in tqdm(enumerate(dataloader), total=len(dataloader)):
@@ -27,7 +27,6 @@ def train_fn(model, dataloader, optmizer, scheduler, device):
         running_loss += loss.item()
         loss.backward()
         optmizer.step()
-        scheduler.step()
 
     epoch_loss = running_loss / len(dataloader)
     
