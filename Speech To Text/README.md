@@ -43,12 +43,12 @@ Model architeture is an Enoder-Decoder architecture with
 <pre>
 1) Training Stratergy      : Training the whole network from scratch.
 2) Optimizer               : Adam optimizer was used with weight decay.
-3) Learning Rate Scheduler : 
+3) Learning Rate Scheduler : Reduce on Plateau
 4) Regularization          : Dropout, MFCC's masking,  
 5) Loss                    : CTC Loss.
 6) Performance Metric      : CTC Loss.
-7) Epochs Trained          : .
-8) Training Time           : 
+7) Epochs Trained          : 14
+8) Training Time           : 6 Hours
 </pre>
 
 ## Further Improvement
