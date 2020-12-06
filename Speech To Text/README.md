@@ -47,7 +47,7 @@ Model architeture is an Enoder-Decoder architecture with
 4) Regularization          : Dropout, MFCC's masking,  
 5) Loss                    : CTC Loss.
 6) Performance Metric      : CTC Loss.
-7) Epochs Trained          : 14
+7) Epochs Trained          : 15
 8) Training Time           : 6 Hours
 </pre>
 
