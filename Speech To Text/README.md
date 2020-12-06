@@ -17,6 +17,17 @@ Dataset : http://www.openslr.org/12/
 3) Run ```python3 train.py``` and let the model train for 10 iterations.
 4) To infer on the trained model run ```python3 predict.py```.
 
+## Results:
+1) Loss Plot :
+  <img src="https://github.com/ShivamRajSharma/PyTorch/blob/master/Speech%20To%20Text/Output/loss_plot.png"/>
+  
+2) Output :
+  <img src="https://github.com/ShivamRajSharma/PyTorch/blob/master/Speech%20To%20Text/Output/output_1.png"/>
+  <img src="https://github.com/ShivamRajSharma/PyTorch/blob/master/Speech%20To%20Text/Output/output_2.png"/>
+  
+
+
+
 ## Model Architecture 
 
 <p align="center">
