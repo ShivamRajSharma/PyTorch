@@ -22,6 +22,10 @@ Dataset : https://www.kaggle.com/abhinavwalia95/entity-annotated-corpus
 3) Run ```python3 train.py``` and let the model train for 2-3 iterations.
 4) To infer on the trained model run ```python3 predict.py```.
 
+## Results:
+<p align="center">
+  <img src="https://github.com/ShivamRajSharma/PyTorch/blob/master/NER/LSTM-CRF/Output/output.png" />
+</p>
 
 ## Model Architecure 
 <p align="center">
