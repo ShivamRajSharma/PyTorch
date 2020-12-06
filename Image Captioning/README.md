@@ -32,11 +32,9 @@ The model is an Encoder-Decoder based CNN-RNN achtecture with:
 3) Learning Rate Scheduler : Exponential decay at Plateau.
 4) Regularization          : Dropout, Image Augmentation
 5) Loss                    : Categorical Cross-Entropy 
-6) Performance Metric      : BLEU Score.
-7) Performance             :
-7) Epochs Trained          : 10-20.
-8) Training Time           : 
-9) Decoding                : Greedy
+6) Epochs Trained          : 20.
+7) Training Time           : 
+8) Decoding                : Greedy
 </pre>
 
 ## Further Improvement
