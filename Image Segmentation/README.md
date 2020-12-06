@@ -16,6 +16,13 @@ Dataset : https://www.kaggle.com/ianmoone0617/chest-xray-with-masks-for-image-se
 3) Run ```python3 train.py``` and let the model train for 10 iterations.
 4) To infer on the trained model run ```python3 predict.py```.
 
+## Results:
+
+<p align="center">
+  <img src="https://github.com/ShivamRajSharma/PyTorch/blob/master/Image%20Segmentation/Output/output.jpg"/>
+</p>
+
+
 ## Model Architecture 
 
 <p align="center">
@@ -33,8 +40,8 @@ Paper : https://arxiv.org/abs/1505.04597
 4) Regularization          : Dropout 
 5) Loss                    : Dice Loss + Binary Cross-Entropy Loss
 6) Performance Metric      : Dice Loss + Binary Cross-Entropy Loss.
-7) Epochs Trained          : .
-8) Training Time           : 
+7) Epochs Trained          : 35
+8) Training Time           : 1.5 Hous
 </pre>
 
 ## Further Improvement

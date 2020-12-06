@@ -22,6 +22,10 @@ Dataset : https://www.kaggle.com/abhinavwalia95/entity-annotated-corpus
 3) Run ```python3 train.py``` and let the model train for 2-3 iterations.
 4) To infer on the trained model run ```python3 predict.py```.
 
+## Results:
+<p align="center">
+  <img src="https://github.com/ShivamRajSharma/PyTorch/blob/master/NER/LSTM/Output/output.png" />
+</p>
 
 ## Model Architecure 
 <p align="center">
@@ -38,9 +42,9 @@ A Unidirectional based simple GRU network with 2 headed output for NER and POS t
 5) Regularization          : Dropout
 6) Performance Metric      : Accuracy.
 7) Epochs Trained          : 2
-8) POS Performance         : 
-9) NER Performance         :
-9) Training Time           : 
+8) POS Performance         : 97.2%
+9) NER Performance         : 97.5%
+9) Training Time           : 12 sec
 </pre>
 
 ## Further Improvement 
