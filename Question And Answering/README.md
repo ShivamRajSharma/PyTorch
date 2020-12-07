@@ -26,7 +26,7 @@ Dataset : https://www.kaggle.com/c/tweet-sentiment-extraction
 
 Robustly Optimized Bidirectional Encoder Representation Approach from Transformers (RoBERTa) is a Transformer-based machine learning technique for natural language processing (NLP) pre-training developed by Google. RoBERTa is a “deeply bidirectional” model meaning that BERT learns information from both the left and the right side of a token’s context during the training phase. The bidirectionality of a model is important for truly understanding the meaning of a language. </br>
 
-Paper : https://arxiv.org/abs/1907.11692
+* Paper : https://arxiv.org/abs/1907.11692
 
 
 ## Extra Info
