@@ -36,7 +36,7 @@ Dataset : https://www.kaggle.com/lakshmi25npathi/imdb-dataset-of-50k-movie-revie
 Bidirectional Encoder Representations from Transformers (BERT) is a Transformer-based machine learning technique for natural language processing (NLP) pre-training developed by Google. BERT is a “deeply bidirectional” model meaning that BERT learns information from both the left and the right side of a token’s context during the training phase. The bidirectionality of a model is important for truly understanding the meaning of a language. Let’s see an example to illustrate this. There are two sentences in this example and both of them involve the word “bank”:
 BERT is pre-trained on a large corpus of unlabelled text including the entire Wikipedia(that’s 2,500 million words!) and Book Corpus (800 million words). </br>
 
-Paper : https://arxiv.org/abs/1706.03762
+* Paper : https://arxiv.org/abs/1706.03762
 
 
 ## Extra Info
