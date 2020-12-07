@@ -33,7 +33,7 @@ The dataset contains 1040 captcha files as png images. The label for each sample
   <img src="https://media.springernature.com/original/springer-static/image/chp%3A10.1007%2F978-3-030-31756-0_5/MediaObjects/480626_1_En_5_Fig1_HTML.png" height="200"/>
 </p>
 
-* Model architeture is an Enoder-Decoder architecture with 
+Model architeture is an Enoder-Decoder architecture with 
 1) Encoder - A simple CNN based encoder
 2) Decoder - A simple GRU based decoder
 
